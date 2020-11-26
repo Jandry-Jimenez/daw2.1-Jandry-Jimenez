@@ -1,0 +1,1 @@
+Mi idea es hacer una base datos sobre los tipos de Artistas musciales que hay, donde el usuario elige el Artista que le guste, y muestre una canción de ese artista, donde le de opción de muestrar su(s) artista(s) favorito(s). Tambien puede agregar canciones y artistas que no esten.

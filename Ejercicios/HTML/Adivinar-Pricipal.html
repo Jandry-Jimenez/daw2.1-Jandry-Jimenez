@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Adivinar Numero</title>
+</head>
+<body>
+<form action="/home/jandry/Documentos/Lampp/Apache-htdocs/Adivinar-Inicio.php" method="post">
+	<input type="text" name="numero">
+	<input type="submit" name="boton" value="jugar">
+	<input type="submit" name="play" value="nuevo juego">
+	<input type="submit" name="retry" value="nuevo juego">
+</form>
+
+<?php
+
+if(isset($_GET[play])){
+	$numero= $_GET['numero];
+	
+}
+?>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Ejercicio 1 </title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+      <p><center>Multiplicación por un numero Aleaotroio</center></p>
+       <h1 id="id1"></h1>
+       <h2><center>Resultados</center></h2>
+        <script title="text/JavaScript">
+        
+        //Iniciamos todos los arrays y componentes que vayamos a usar
+        var array = [];
+        var arrayPar = [];
+        var arrayImpar = [];
+        var n1 = 0;
+        var n2 = 0;
+        
+        
+        //Aqui se pide al usuario que escriba 10 numeros como maximo
+        for (var i= 0; i < 10; i++) {
+            
+            //Aqui el array se llena con los numeros que el usuario escriba por pantalla
+            array[i] = prompt("Escribe un numero: " + "llevas " + (i + 1) + " de 10");
+            
+            //Multiplica el numero introducido por un numero aleatorio entre 0 y 10
+            array[i] = array[i] * Math.round(Math.random() *10 + 1); 
+                
+            //En este array se recogen los numeros par
+            if (array[i] % 2 == 0) { 
+                arrayPar[n2] = array[i];
+                n2++;
+            } else { 
+                //En este array se recogen los numeros impares
+                arrayImpar[n1] = array[i];
+                n1++;
+            }
+        }
+            //Aqui se escribiran por pantalla los resultados
+        document.write("Los numeros multiplicados son: " + array + "<br>");
+        document.write("Los pares son: " + arrayPar + "<br>");
+        document.write("Los impares son: " + arrayImpar + "<br>");
+        
+        //Aqui se nuestra el array que mas componentes tenga
+        if (arrayPar.length > arrayImpar.length) {
+            document.write("El array con más componentes pares: " + arrayPar);
+        } else if (arrayPar.length < arrayImpar.length) {
+            document.write("El array con más componentes impares: " + arrayImpar);
+        } else {
+            document.write("Ambos arrays tienen los mismos componentes.");
+        }
+    </script>
+    </body>
+</html>
