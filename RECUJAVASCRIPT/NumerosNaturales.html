@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 2</title>
+</head>
+<body>
+    
+    <button id="introducir">Introducir Números</button>
+    <script>
+        window.onload= inicio();
+
+        function inicio(){
+            document.getElementById("introducir").onclick= introducir;
+        }
+
+        var numero1;
+        var numero2;
+        var naturales= [];
+
+        function introducir(){
+            //Numeros
+            numero1= parseInt(prompt("Escribe un numero"));
+                //alert("Numero 1.");
+            numero2= parseInt(prompt("Escribe el segundo numero"));
+                //alert("Numero 2.");
+
+            //COMPROBACIONES
+            if(isNaN(numero1)){ //Comprueba que el primero numero no quede vacío
+                alert("NO HAS INTRODUCIDO EL PRIMER NUMERO O HAS INTRODUCIDO ALGO DIFERENTE. Debes introducir un numero.");
+                introducir();
+            }else if (isNaN(numero2)){//Comprueba que el primero numero no quede vacío
+                alert("NO HAS INTRODUCIDO EL SEGUNDO NUMERO O HAS INTRODUCIDO ALGO DIFERENTE. Debes introducir un numero.");
+                introducir();
+            }else{
+                operar()
+            }
+        }
+
+        function operar(){
+            
+            if(numero1 < numero2){
+                for (var i= numero1 + 1; i < numero2; i++) {
+                    naturales.push(i)
+                }
+            }else{
+                for (var i= numero2 + 1; i < numero1; i++) {
+                    naturales.push(i)
+                }
+
+            }
+            
+            mostrar();
+        }
+
+        function mostrar(){
+            document.write("Los numeros son: " + naturales);
+
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial</title>
+</head>
+<body>
+    <button id = "introducir">Calcular el Factorial</button>
+
+    <script>
+        window.onload = inicio();
+
+        var num1;
+        var num2;
+        var mult1 = 1;
+        var mult2 = 1;
+        var acumulado1;
+        var acumulado2;
+        var resultado1 = [];
+        var resultado2 = [];
+
+//FUNCION INICIAL
+        function inicio(){
+            document.getElementById("introducir").onclick = introducir;
+            
+        }
+//FUNCION DE RECOGIDA DE NUMEROS
+        function introducir(){
+        num1 = parseInt(prompt("Escriba el primer número: "));
+        num2 = parseInt(prompt("Escriba elsegundo número: "));
+        acumulado1 = num1;
+        acumulado2 = num2;
+        calcular();
+        }
+        
+//FUNCION DE PROCESO
+        function calcular(){
+            for (let i = 0; acumulado1 - 1 > i; acumulado1--){
+                mult1 = mult1 * (acumulado1-i);
+                resultado1.push(mult1);
+                //document.write(acumulado1 -1);
+
+            }
+            for (let i = 0; acumulado2 - 1 > i; acumulado2--){
+                mult2 = mult2 * (acumulado2-i);
+                alert(mult2);
+                resultado2.push(mult2);
+                //document.write(acumulado1 -1);
+
+            }
+        resultado();
+        }
+//RESULTADO        
+        function resultado(){
+            document.write("<h1>RESULTADOS</h1>")
+            document.write("Los números factoriales de " + num1 + " son: " + resultado1);
+            document.write("<br>");
+            document.write("Los números factoriales de " + num2 + " son: " + resultado2);
+        }
+    </script>   
+    
+</body>
+</html>

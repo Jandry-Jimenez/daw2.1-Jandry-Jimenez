@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practica</title>
+</head>
+<body>
+	
+	<h1>Evalua tus practicas</h1>
+
+	<button type="button" onclick="actividad()">Evaluar nueva practica</botton>
+
+	<button type="button" onclick="evaluar()">Calcula la paractica</botton>
+	<script type="text/javascript">
+		//Array para donde se guardan los porcentajes
+		var porcentaje= [];
+
+	//Esto hara que aparezca el botton de "Evaluar nueva practica"
+	function actividad(){
+		
+
+		//Pregunta a usuaro cuantas prcaticas quiere evaluar
+		var actividades=prompt("¿Cuántas practicas quieres evaluar?");
+		//Este bucle hara que se incremente la variable "i" y en dodnde esta la i añadira un valor
+		for (var i = 0; i < actividades; i++) {
+			porcentaje= prompt("Porcentaje");
+
+		 document.write("<html><body><table border='1' id='t_"+i+"'><tr><td>Casos Raros</td><th><input id='Cr_" + i +"' type='number'placeholder='porcentaje entre 1-10%'></th></body></tr><tr><td>Funcionamiento</td><th><input id='Fn_" + i +"' type='number' placeholder='Porcentaje entre 10%'></th></tr><tr><td>Calidad</td><th><input id='Cl_" + i +"'type='number' placeholder='Porcentaje entre 20%''></th></tr><tr><td>Diseño</td></body><th><input id='Dn_" + i +"'type='number' placeholder='Porcentaje entre 5%'></th></tr></table></br><p id='parr_"+ i +"'></p><button id=b_' "+ i +"' type'button' onclick='calcular("+ i +")'>Calcular Nota</button></body</html>");
+		}
+	}
+
+	//Esta funcion guarda el valor de cada posicion de la tabla "Casos Raros", "Funcionalidad", etc
+	function calcular(pos){
+		//Eso coge cada valor de la tabla
+		var casosR= document.getElementById("Cr_" + pos).value;
+		var funcionamiento= document.getElementById("Fn_" + pos).value;
+		var calidad= document.getElementById("Cl_" + pos).value;
+		var diseño= document.getElementById("Dn_" + pos).value;
+
+		//Esta variable calcula la media de los valores
+		var media= casosR * 0.1 + funcionamiento * 0.7 + calidad * 0.15 + diseño * 0.05;
+		//Esto imprime la lamedia que hemos calculado anteriormente		document.getElementById("parr_" + pos).innerHTML= media;
+	}
+	</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+	<table border="1" id="t1">
+		<td>Casos Raros</td>
+			<th><input type="number" placeholder="Porcentaje entre 1-10%"></th></body></tr>
+			
+		<td>Funcioanmiento</td>
+			<th><input type="number" placeholder="Porcentaje entre 10%"></th></tr>
+		<td>Calidad</td>
+			<th><input type="number" placeholder="Porcentaje entre 20%"></th></tr>
+		<td>Diseño</td></body>
+			<th><input type="number" placeholder="Porcentaje entre 5%"></th></tr>
+	</table>
+	-->
