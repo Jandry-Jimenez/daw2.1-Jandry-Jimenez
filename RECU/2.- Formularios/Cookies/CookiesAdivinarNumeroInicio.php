@@ -11,7 +11,7 @@
 
     <h1>Jugador 1: Introduce un número:</h1>
     <input type = "number" name = "oculto" />
-    <input type = "submit"                  value = "Guardar oculto" />
+    <input type = "submit" value = "Guardar oculto" />
 
 </form>
 
