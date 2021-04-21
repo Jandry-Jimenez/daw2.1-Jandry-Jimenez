@@ -2,7 +2,11 @@
     if (!isset($_COOKIE["acumulado"]) || isset($_REQUEST["reset"])) { // Si NO hay formulario enviado (1ª vez), o piden resetear.
         $acumulado = 0;
     } else { // Sí hay formulario enviado (2ª ó siguientes veces).
-        $acumulado = (int) $_COOKIE["acumulado"] + 1;
+        $acumulado = (int) $_COOKIE["acumulado"];
+
+        if(isset($_REQUEST["suma"])) {
+            $acumulado++;
+        }
     }
 //ESTO CREO LA COOKIES Y LO GUARDA
     setcookie("acumulado", $acumulado, time() +30)
@@ -20,7 +24,7 @@
     <!-- ESTO ES LA MEMORIA DONDE SE ALMACENA EL VALOR
      <input type='hidden' name='acumulado' value='<?=$acumulado?>'> -->
     
-    <input type='submit' value='+1' name='suma'>
+    <input type = 'submit' value = '+1' name = 'suma'>
 
     <br /><br />
 
