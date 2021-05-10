@@ -17,11 +17,11 @@
         $intento = null;
         $numIntentos = (int) $_COOKIE["numIntentos"];
     }
-
+    
+    // Aqui se generan las cookies para usarlas
     setcookie("oculto", $oculto, time() + 30);
     setcookie("numIntentos", $numIntentos, time() + 30);
 ?>
-
 
 
 <!--PARTE HTML -->
@@ -31,8 +31,11 @@
 </head>
 <body>
 
-<h1>ADIVINA EL NÚMERO</h1>
+<center><h1>ADIVINAR EL NÚMERO CON COOKIES</h1></center>
 
+<h2>ADIVINA EL NÚMERO</h2>
+
+<!-- Condiciones cuando el usuario este adivinando -->
 <?php
     if($intento == null) {
         // No informamos de nada, el juego acaba de empezar.
@@ -42,16 +45,18 @@
     } else if($intento > $oculto) {
         echo "<p>El número que buscas es menor.</p>";
     } else {
-        echo "<p>Has adivinado el número. Era $oculto.</p>";
+        echo "<h2>¡GENIAL! Has adivinado el número. Era $oculto.</h2>";
+        echo "<p> Has gastado $numIntentos</p>";
     }
 ?>
 
 <!--FORMULARIO -->
-<form method = "post">
-        <h3>Jugador 2: Adivina el número. Llevas <?= $numIntentos ?> intento(s).</h3>
-        
-        <input type = "number" name = "intento">
-        <input type = "submit" value = "Intentar">
+<h3>Jugador 2: Adivina el número. Llevas <?= $numIntentos ?> intento(s).</h3>
+
+<form method = "post">        
+    <input type = "number" name = "intento">
+    <input type = "submit" value = "Intentar">
+
 </form>
 
 </body>

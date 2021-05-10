@@ -13,12 +13,15 @@ if (!isset($_REQUEST["acumulado"])) {
 <!-- PARTE HTML -->
 <html>
 <body>
+
 <h1>INCREMENTAR UN NÚMERO</h1>
 
 <form method = 'get'>
-<input type = "number" name = "acumulado" value ='<?=$acumulado?>' placeholder ="Escribe un número"> <!---->
-<input type = "submit" name = "suma" value = "Incrementar +1">
+
+<input type = "number" name = "acumulado"   value ='<?=$acumulado?>' placeholder ="Escribe un número"> <!---->
+<input type = "submit" name = "suma"        value = "Incrementar +1">
 
 </form>
+
 </body>
 </html>

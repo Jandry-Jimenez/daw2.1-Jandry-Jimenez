@@ -5,3 +5,6 @@ Unificar todos los ejercicios 1,2,3, en único programa y donde ahora los valore
 Cronometro INICIO
 Cronometro PARAR, REINICIAR (Valo del h1 a 0) y REANUDAR.
 Hacer el Cronometro cn dos valores (Min y Seg).
+Examen Teclado
+Dos en raya
+Practica =, hacerla desde 0 con la estructura que hacemos ahora

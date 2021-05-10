@@ -13,27 +13,34 @@
     <h1 id="contador">0</h1>
 
     <!--BOTONES PARA EL CRONÓMETRO-->
-    <button id = "bt1">Inicio</button>
-    <button id = "bt2">Parar</button>
-    <button id = "bt3">Reiniciar</button>
-    <button id = "bt4">Reanudar</button>
+    <button id = "inicio">Inicio</button>
+    <button id = "parar">Parar</button>
+    <button id = "reiniciar">Reiniciar</button>
+    <button id = "reanudar">Reanudar</button>
 
     <script>
         window.onload = inicio;
 
-        //ESTA FUNCION
+//ESTA FUNCIÓN HACE QUE A LA HORA DE HACER CLICK, CADA BOTÓN HAGA SU TAREA
+
         function inicio(){
-            document.getElementById("bt1").onclick = repeticion;
+            document.getElementById("inicio").onclick = repetir;
+            document.getElementById("parar").onclick;
             
         }
 
+//ESTAS DOS FUCIONES SIRVEN PARA INICIAR EL CONTADOR DEL CRONOMETRO
+
+        //Repite lo de la funcion "finiciar" cada 1s
         function repetir(){
             var repeticion = setInterval(finiciar, 1000);
         }
+        //Esto hace que se sume "+1" en el contador
         function finiciar(){
             var incrementar = parseInt(document.getElementById("contador").innerHTML) + 1;
             document.getElementById("contador").innerHTML = incrementar;
         }
+
     </script>
 
     <br><br>
