@@ -47,7 +47,10 @@
 </table>
  <br>
 
- <a href='CFicha.php?id=-1'>Crear entrada</a>
+ <a href = 'CFicha.php?id=-1'>Crear entrada</a>
+
+ <br />
+ <a href = 'PListado.php'>Gestionar Listado de Personas</a>
  
 </body>
 </html>

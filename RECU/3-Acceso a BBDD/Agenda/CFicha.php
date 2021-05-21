@@ -21,7 +21,7 @@
         $rs = $select->fetchAll();
 
         // Con esto, accedems a los datos de la primero (Y esperemos que única), fila que haya venido
-        $categoriaNombre = $rs[0]["nombre"]; //Preguntar esto en clase
+        $categoriaNombre = $rs[0]["nombre"]; 
     }
 
 ?>
