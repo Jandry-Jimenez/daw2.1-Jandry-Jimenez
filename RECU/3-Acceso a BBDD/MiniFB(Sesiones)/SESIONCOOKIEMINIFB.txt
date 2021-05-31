@@ -1,0 +1,4 @@
+- Acto de inicio de sesion anotar codigo en base datos y en el cliente.
+- Quieren ver un pagina privada y no sabe si hay session cookie.
+- Cada vez que sabemos del usuario, le renovamos la cookie (Desde la última vez que le vemos).
+- CUando cierra la sesión, eiminar el codigo cookie tanto la base datos como al usuario.
