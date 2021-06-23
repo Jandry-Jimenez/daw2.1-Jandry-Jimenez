@@ -1,0 +1,61 @@
+h1, h2, h3, h4{color: darkorange;}
+body{text-align: center; background-color: #1f3438; color: white;}
+h2 {text-align: center;}
+button  {background-color: darkorange; border-radius: 5px; border-color: transparent; color: white;}
+table{margin: auto;}
+input[type="text"]{color: white; background-color: #1f3438; border-color: white;}
+
+#personasTabla > div {
+    display: table;
+    width: 90%;
+}
+
+#personasTabla > div > div {
+    display: table-row;
+    width: 100%;
+}
+
+#personasTabla > div > div > div {
+    display: table-cell;
+    text-align: center;
+    border: 1px solid silver;
+    width: 16.67%;
+    padding: 1px;
+}
+
+#personasTabla > div > div > div > input {
+    width: 100%;
+    border: none;
+}
+
+#personasCabecera {
+    color: darkorange;
+}
+
+#categoriasCabecera {
+    color: darkorange;
+}
+
+#categoriasTabla > div {
+    display: table;
+    width: 40%;
+    display: auto;
+}
+
+#categoriasTabla > div > div {
+    display: table-row;
+    width: 100%;
+}
+
+#categoriasTabla > div > div > div {
+    display: table-cell;
+    text-align: center;
+    border: 1px solid silver;
+    width: 50%;
+    padding: 1px;
+}
+
+#categoriasTabla > div > div > div > input {
+    width: 100%;
+    border: none;
+}

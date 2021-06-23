@@ -95,7 +95,7 @@ function establecerSesionCookie()
     $codigoCookie = generarCadenaAleatoria(32); // Número aleatorio
 }
 
-function actualizarCodigoCookieEnBD()
+function actualizarCodigoCookieEnBD(?string $codigoCookie)
 {
     $conexion = ConexionPDO();
     $sql = "UPDATE Usuario SET codigoCookie=? WHERE id=?";

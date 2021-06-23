@@ -1,0 +1,6 @@
+h1, h2, h3, h4{color: darkorange;}
+body{text-align: center; background-color: #1f3438; color: white;}
+h2 {text-align: center;}
+button  {background-color: darkorange; border-radius: 5px; border-color: transparent; color: white;}
+table{margin: auto;}
+input[type="checkbox"]{color: darkorange;}
