@@ -2,15 +2,17 @@
 
 require_once "Conexion.php";
 $conexion = ConexionPDO();
+session_start();
 
 $identificador = (int)$_REQUEST["identificador"];
-$sql = "SELECT nombre FROM Usuario Where id=1";
+$nombre = (int)$_REQUEST["nombre"];
+$apellidos = (int)$_REQUEST["apellidos"];
 
-        $select = $conexion->prepare($sql);
-        $select->execute([$identificador]); // Se añade el parámetro a la consulta preparada.
-        $rs = $select->fetchAll();
+$sql = "SELECT identificador, nombre, apellidos FROM Usuario Where id=?, nombre=?, apellidos=?;"
+$select = $conexion->prepare($sql);
+$select->execute([$identificador, $nombre, $apellidos]); 
+$rs = $select->fetchAll();
 
-session_start();
 
 if (!haySesionRAMIniciada() && !intentarCanjearSesionCookie()) {
     redireccionar ("SesionIniciar.php");
@@ -42,7 +44,7 @@ if (!haySesionRAMIniciada() && !intentarCanjearSesionCookie()) {
   <br>
 
     <form action="usuarioFicha.php">
-            Usuario:<input type="text" name="nombre" value="<?=$identificador?>"><br>
+            Usuario:<input type="text" name="identificador" value="<?=$identificador?>"><br>
             Nombre:<input type="text" name="nombre" value="<?=$nombre?>"><br>
             Apellidos:<input type="text" name="apellidos" value="<?=$apellidos?>"><br>
     </form>

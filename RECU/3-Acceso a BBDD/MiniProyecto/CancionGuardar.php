@@ -67,7 +67,7 @@
 
 <?php } ?>
 
-<a href = 'CListado.php'>Volver al listado de Categorías</a>
+<a href = 'CancionesListado.php'>Volver al listado de Canciones</a>
 
 </body>
 

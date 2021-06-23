@@ -2,34 +2,33 @@
 <?php
 
 require_once "Conexion.php";
+$conexion = ConexionPDO();
+
     
 	$id = (int)$_REQUEST["id"];
 	$nuevaEntrada = ($id == -1);
 
     if ($nuevaEntrada) { 
-		$artistaNombre = "<introduzca nombre>";
-        $artistaApellidos = "<introduzca apellidos>";
-		$artistaTelefono = "<introduzca teléfono>";
-		$artistaCancionId = 0;
-    } else { // Cuando el usuario quiere acceder a una entrada ya resgistrada (Los datos se cargarán)
-        $sqlArtista = "SELECT nombre, apellidos, edad, cancionId FROM Artista WHERE id=?";
+		$artistaNombre = "Nombre";
+        $artistaApellidos = "Apellidos";
+		$artistaEdad = "Edad";
+    } else { // Cuando el usuario quiere acceder a una entrada ya resgistrada
+        $sqlArtista = "SELECT nombre, apellidos, edad FROM Artista WHERE id=?";
 
         // Realizamos una conexion con la base de datos
         $select = $conexion->prepare($sqlArtista);
         $select->execute([$id]);
         $rsArtista = $select->fetchAll();
 
-        // Con esto, accedemos a los datos de la primera (y esperemos que única) fila que haya venido.
 		$artistaNombre = $rsArtista[0]["nombre"];
         $artistaApellidos = $rsArtista[0]["apellidos"];
-		$artistaTelefono = $rsArtista[0]["telefono"];
-		$artistaCancionId = $rsArtista[0]["cancionId"];
+		$artistaEdad = $rsArtista[0]["edad"];
     }
 
     // Con lo siguiente se deja preparado un recordset con todas las categorías.
     $sqlCancion = "SELECT id, nombre FROM Canciones ORDER BY nombre";
     $select = $conexion->prepare($sqlCancion);
-    $select->execute([]); // Array vacío porque la consulta preparada no requiere parámetros.
+    $select->execute([]); // Array vacío no requiere parámetros.
     $rsCancion = $select->fetchAll();
 ?>
 
@@ -55,7 +54,7 @@ require_once "Conexion.php";
 <ul>
     <li>
         <b>Nombre:</b>
-        <artistaype = 'text' name = 'nombre' value = '<?=$artistaNombre?>' />
+        <input type = 'text' name = 'nombre' value = '<?=$artistaNombre?>' />
     </li>
 
     <li>
@@ -65,24 +64,8 @@ require_once "Conexion.php";
 
     <li>
         <b>Edad: </b>
-        <trtistaype = 'number' name = 'edad' value = '<?=$artistaEdad?>' />
+        <input type = 'number' name = 'edad' value = '<?=$artistaEdad?>' />
     </li>
-
-    <li>
-        <b>Genero: </b>
-        <select  name='cancionId'>
-            <?php
-                foreach ($rsCancion as $filaCancion) {
-                    $cancionId        = (int) $filaCancion["id"];
-                    $CancionNombre    = $filaCancion["nombre"];
-
-
-                    if($generod == $generoCancionId) $seleccion = " selected='true'";
-                    else                                    $seleccion = "";
-
-                    echo "<option value = '$cancionId' $seleccion>$CancionNombre</option>";
-                }
-            ?>
         </select>
     </li>
 
@@ -105,7 +88,7 @@ require_once "Conexion.php";
 <br />
 <br />
 
-<a href = 'PListado.php'>Volver al Listado de Persona.</a>
+<a href = 'PListado.php'>Volver al Listado de Artistas.</a>
 
 </body>
 </html>

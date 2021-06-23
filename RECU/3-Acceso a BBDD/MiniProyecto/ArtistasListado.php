@@ -2,6 +2,8 @@
 <?php
 
 require_once "Conexion.php";
+$conexion = ConexionPDO();
+
 session_start();
 
 if (!haySesionRAMIniciada() && !intentarCanjearSesionCookie()) {
